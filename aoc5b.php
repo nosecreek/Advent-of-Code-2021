@@ -18,7 +18,7 @@ foreach($data as $i => $x) {
 	$thisx = $startx;
 	$thisy = $starty;
 	
-	if($data[$i][0][0] == $data[$i][1][0]) { //x coords match - this is a column
+	if($startx == $endx) { //x coords match - this is a column
 		if($starty > $endy) {
 			$endy = $starty;
 			$starty = intval($data[$i][1][1]);
@@ -30,7 +30,7 @@ foreach($data as $i => $x) {
 				$vents[$thisx][$j]++;
 			}
 		}
-	} elseif($data[$i][0][1] == trim($data[$i][1][1])) { //y coords match - this is a row
+	} elseif($starty == $endy) { //y coords match - this is a row
 		if($startx > $endx) {
 			$endx = $startx;
 			$startx = intval($data[$i][1][0]);
